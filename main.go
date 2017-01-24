@@ -11,7 +11,7 @@ import (
 var Name = "lookout"
 
 func main() {
-	if l := lookout.NewLookout("Sunglasses", "ls"); l != nil {
+	if l := lookout.NewLookout("Sunglasses", "ls"); l == nil {
 		os.Exit(1)
 	}
 
