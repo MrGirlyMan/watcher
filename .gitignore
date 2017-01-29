@@ -8,4 +8,5 @@
 *\node_modules
 
 # Ignore automated build directory
-src\frontman\build
+src/frontman/build
+src/frontman/build/*
