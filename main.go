@@ -1,26 +1,20 @@
 package main
 
 import (
-	"os"
-	"fmt"
-	"lookout"
-	"sleuth"
-	// "looker"
-	// "spotter"
+    "os"
+    "fmt"
+    "lookout"
+    "sleuth"
 )
 
 var Name = "lookout"
 
 func main() {
-  //fmt.Println(TEMPLATE_DIR)
+    // Launch Lookout process and network monitoring
+    if l := lookout.NewLookout("Sunglasses", "ls"); l == nil {
+        os.Exit(1)
+    }
 
-	if l := lookout.NewLookout("Sunglasses", "ls"); l == nil {
-		os.Exit(1)
-	}
-
-  // Launch Sleuth webserver
-  sleuth.Sleuth()
-
-	fmt.Println(os.Geteuid())
-	fmt.Println(Name)
+    // Launch Sleuth webserver
+    sleuth.Sleuth()
 }

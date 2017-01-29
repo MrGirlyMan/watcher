@@ -19,7 +19,7 @@ func loadPage(title string) (*Page, error) {
   home_directory := os.Getenv("GOPATH")
 
   if (home_directory != "") {
-    index = home_directory + "/src/frontman/index.html"
+    index = home_directory + "/src/frontman/build/index.html"
   } else {
     log.Fatal("$GOPATH is not define.")
   }
@@ -50,5 +50,5 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func StartHandlers() {
   http.HandleFunc("/", handler)
-  http.ListenAndServe(":8080", http.FileServer(http.Dir("./src/frontman/public")))
+  http.ListenAndServe(":8080", http.FileServer(http.Dir("./src/frontman/build")))
 }

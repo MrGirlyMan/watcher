@@ -1,0 +1,17 @@
+// The majority of scss can go here.
+
+@mixin my-border($color) {
+  border: 1px solid $color;
+}
+
+body {
+  background: $color2;
+  @include my-border(green);
+}
+
+
+ul {
+	li {
+		display: inline;
+	}
+}

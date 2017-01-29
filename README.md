@@ -18,4 +18,8 @@ Slueth aggrogates and annotates metrics stored within databases. Slueth serves o
 
 In order to run the project follow these steps:
 - Create an environment variable called GOPATH: `export GOPATH=/path/to/directory`
+- Install npm
+- In the top level folder, run npm install
+- Run `grunt build`
+- Run `grunt watch`
 - Run the command `go build main.go && ./main`

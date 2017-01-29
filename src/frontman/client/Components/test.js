@@ -1,4 +1,5 @@
 var h = React.createElement;
+
 var MyList =  React.createClass({
   render: function(){
     var lis = this.props.data.map(function(text, idx){
