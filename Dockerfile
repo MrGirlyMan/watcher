@@ -1,15 +1,16 @@
 FROM golang:1.7.4
-MAINTAINER Nicolas Ruflin <ruflin@elastic.co>
 
 RUN set -x && \
     apt-get update && \
     apt-get install -y netcat && \
     apt-get clean
 
-COPY libbeat/scripts/docker-entrypoint.sh /entrypoint.sh
+COPY . /go/watcher
 
-RUN mkdir -p /etc/pki/tls/certs
-COPY testing/environments/docker/logstash/pki/tls/certs/logstash.crt /etc/pki/tls/certs/logstash.crt
+ENV GOPATH=/go/watcher
 
-# Create a copy of the repository inside the container.
-COPY . /go/src/github.com/elastic/beats/
+WORKDIR /go/watcher
+
+EXPOSE 8080:8080
+
+# RUN go build main.go && ./main
