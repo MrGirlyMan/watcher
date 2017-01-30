@@ -1,0 +1,8 @@
+# bundled js file
+*\bundle.min.js
+
+#bundled css file
+*\main.min.css
+
+# node modules
+*\node_modules
