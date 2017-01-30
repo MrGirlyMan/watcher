@@ -1,23 +1,14 @@
 var h = React.createElement;
 
-var MyList =  React.createClass({
-  render: function(){
-    var lis = this.props.data.map(function(text, idx){
-      return h('li', {key:idx }, text)
-    })
-    return (
-      h('ul', null, lis)
-    )
-  }
-})
-
 var HelloWorldBanner =  React.createClass({
-  render: function(){
-    return (
-      h('div', null,
-        h('h1', null, 'Hello World'),
-        h(MyList, {data:['I am','A react','Component']})
-       )
-    )
-  }
+	render: function(){
+		return (
+			h('div', {className: "container"},
+				h('h1', null, 'Hello World'),
+				h('div', {className: "starter-template"},
+					h('p', {className: 'lead'}, 'Testing testing testing...' )
+				)
+			)
+		)
+	}
 })
