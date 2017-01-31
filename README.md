@@ -22,4 +22,5 @@ In order to run the project follow these steps:
 - In the top level folder, run npm install
 - Run `grunt build`
 - Run `grunt watch`
+- Run the command `go get` to install Go dependencies. You can ignore the errors.
 - Run the command `go build main.go && ./main`

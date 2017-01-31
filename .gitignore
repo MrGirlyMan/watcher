@@ -10,3 +10,5 @@
 # Ignore automated build directory
 src/frontman/build
 src/frontman/build/*
+src/github.com
+src/github.com/*
