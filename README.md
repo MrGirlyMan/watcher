@@ -14,13 +14,21 @@ Lookout handles networking and process inspection. It formats data that can be s
 
 Slueth aggrogates and annotates metrics stored within databases. Slueth serves out meaningful data through REST calls.
 
+
+
 # Running the project
 
-In order to run the project follow these steps:
-- Create an environment variable called GOPATH: `export GOPATH=/path/to/directory`
-- Install npm
-- In the top level folder, run npm install
+## Installation
+- Install Go. Instructions can be found at [golang.org](https://golang.org/doc/install)
+- Create an environment variable called GOPATH: `export GOPATH=~/go`
+  - Note: You may want to add this command to your `.bashrc` and/or `.bash_profile`
+- Create a Go src directory (`mkdir -p ~/go/src`)
+- Install Node.js. Installers and binaries can be found [here](https://nodejs.org/en/download/)
+
+## Development 
+- Within the Go src directory, clone [Watcher](https://github.com/MrGirlyMan/watcher)
+- Cd into the watcher directory
+- Install Go dependencies with `go get`
+- Install Node.js dependencies with `npm install`
 - Run `grunt build`
 - Run `grunt watch`
-- Run the command `go get` to install Go dependencies. You can ignore the errors.
-- Run the command `go build main.go && ./main`

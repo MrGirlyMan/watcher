@@ -1,0 +1,12 @@
+lookout:
+  name: Pedro
+
+
+foo: 1
+bar:
+  - one
+  - two
+test: a
+frontman_build_path: "~/go/src/frontman/build"
+
+test2: b

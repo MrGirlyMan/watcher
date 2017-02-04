@@ -24,7 +24,7 @@ func loadPage(filepath string) (*Page, error) {
   if (home_directory != "") {
     full_path = home_directory + filepath
   } else {
-    log.Fatal("$GOPATH is not define.")
+    log.Fatal("$GOPATH is not defined.")
   }
 
   body, err := ioutil.ReadFile(full_path)
@@ -38,7 +38,7 @@ func loadPage(filepath string) (*Page, error) {
 
 // Handlers handle web responses
 func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-  p, _ := loadPage("/src/frontman/build/index.html")
+  p, _ := loadPage("/src/watcher/frontman/build/index.html")
 
   fmt.Fprintf(w, string(p.Body))
   // log.Fatal(err)
@@ -55,7 +55,7 @@ func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 func Static(w http.ResponseWriter, r *http.Request, params httprouter.Params) {
   var mime_type string
 
-  static_path := "/src/frontman/build" + params.ByName("filepath")
+  static_path := "/src/watcher/frontman/build" + params.ByName("filepath")
   p, _ := loadPage(static_path)
 
   // Determining the MIME type of the file based on file extension

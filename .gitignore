@@ -1,14 +1,5 @@
-# bundled js file
-*\bundle.min.js
-
-#bundled css file
-*\main.min.css
-
 # node modules
-*\node_modules
+node_modules
 
-# Ignore automated build directory
-src/frontman/build
-src/frontman/build/*
-src/github.com
-src/github.com/*
+# Build Directory
+frontman/build
