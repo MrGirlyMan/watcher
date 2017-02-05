@@ -15,10 +15,11 @@ var (
 )
 
 type Config struct {
-	Foo string
-	Bar []string
-	Test string
-	Frontman_build_path string
+	Foo 					string
+	Bar 					[]string
+	Test 					string
+	Frontman_build_path 	string
+	Redis 					string
 }
 
 func getConfigFile(path string) (file string, err error) {

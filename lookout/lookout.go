@@ -6,12 +6,14 @@ import (
 	"bytes"
 
 	cfg "watcher/config"
+	"gopkg.in/redis.v5"
 )
 
 type Lookout struct {
-	Name	string
-	Process	string
-	config *cfg.Config
+	Name		string
+	Process		string
+	Cache 		*redis.Client
+	config 		*cfg.Config
 }
 
 // func init() {
@@ -24,12 +26,27 @@ func Run(config *cfg.Config) error {
 }
 
 
-func newLookout(n string, p string, config *cfg.Config) error {
-	lookout := Lookout{Name: n, Process: p}
+func newLookout(n string, p string, c *cfg.Config) error {
+	l := Lookout{Name: n, Process: p, config: c}
+	
+	l.attachCache()
+	l.inspectProcesses()
 
-	lookout.inspectProcesses()
+	err := l.Cache.Set("redis:key", "5", 0).Err()
+
+	if err != nil {
+		panic(err)
+	}
 
 	return nil
+}
+
+func (l *Lookout) attachCache() {
+	l.Cache = redis.NewClient(&redis.Options{
+		Addr:		l.config.Redis,
+		Password: 	"",
+		DB:			0,
+	})
 }
 
 

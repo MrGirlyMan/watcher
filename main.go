@@ -2,7 +2,7 @@ package main
 
 import (
     "os"
-    "fmt"
+    // "fmt"
 
     "watcher/config"
     "watcher/lookout"
@@ -19,8 +19,6 @@ func main() {
     if configs == nil {
         os.Exit(1)
     }
-
-    fmt.Println(configs.Foo)
 
     // Launch Lookout process and network monitoring
     if err := lookout.Run(configs); err != nil {

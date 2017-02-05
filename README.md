@@ -24,6 +24,8 @@ Slueth aggrogates and annotates metrics stored within databases. Slueth serves o
   - Note: You may want to add this command to your `.bashrc` and/or `.bash_profile`
 - Create a Go src directory (`mkdir -p ~/go/src`)
 - Install Node.js. Installers and binaries can be found [here](https://nodejs.org/en/download/)
+- Install Redis. Instructions can be found [here](https://redis.io/download#installation)
+  - Note: To easy connect to redis, start the redis daemon
 
 ## Development 
 - Within the Go src directory, clone [Watcher](https://github.com/MrGirlyMan/watcher)
