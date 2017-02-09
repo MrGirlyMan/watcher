@@ -5,7 +5,7 @@ import (
 	"log"
 	"bytes"
 
-	cfg "watcher/config"
+	cfg "github.com/mrgirlyman/watcher/config"
 	"gopkg.in/redis.v5"
 )
 
@@ -28,7 +28,7 @@ func Run(config *cfg.Config) error {
 
 func newLookout(n string, p string, c *cfg.Config) error {
 	l := Lookout{Name: n, Process: p, config: c}
-	
+
 	l.attachCache()
 	l.inspectProcesses()
 

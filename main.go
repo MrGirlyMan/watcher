@@ -4,9 +4,9 @@ import (
     "os"
     // "fmt"
 
-    "watcher/config"
-    "watcher/lookout"
-    "watcher/sleuth"
+    "github.com/mrgirlyman/watcher/config"
+    "github.com/mrgirlyman/watcher/lookout"
+    "github.com/mrgirlyman/watcher/sleuth"
 )
 
 var Name = "lookout"
