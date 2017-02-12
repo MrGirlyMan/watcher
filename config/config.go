@@ -2,7 +2,7 @@ package config
 
 import (
 	"os"
-	// "fmt"
+	"fmt"
 	"io/ioutil"
 	"path/filepath"
 
@@ -27,6 +27,8 @@ func getConfigFile(path string) (file string, err error) {
 
 	// Check if path is valid file or dir
 	pwd, err := os.Getwd()
+
+	fmt.Println(pwd)
 	
 	if err != nil {
 		return "", err

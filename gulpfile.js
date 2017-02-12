@@ -13,17 +13,17 @@ const minifyCss = require("gulp-minify-css");
 
 var path = {
 	// HTML
-	HTML: "./src/frontman/client/*.html",
-	HTML_DEST: "./src/frontman/build/",
+	HTML: "./frontman/client/*.html",
+	HTML_DEST: "./frontman/build/",
 
 	// Javascript
-	JS: ["!/src/frontman/client/*.js", "./src/frontman/client/**/*.js"],
-	JS_DEST: "./src/frontman/build/js",
+	JS: ["!/frontman/client/*.js", "./frontman/client/**/*.js"],
+	JS_DEST: "./frontman/build/js",
 	JS_OUT: "bundle.min.js",
 
 	// SCSS 
-	SCSS: "./src/frontman/client/scss/*.scss",
-	CSS_DEST: "./src/frontman/build/css",
+	SCSS: "./frontman/client/scss/*.scss",
+	CSS_DEST: "./frontman/build/css",
 	CSS_OUT: "main.min.css",
 };
 
